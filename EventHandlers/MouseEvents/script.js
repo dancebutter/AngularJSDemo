@@ -2,6 +2,7 @@ angular.module("mainModule", [])
 	.controller("mainController", function($scope) {
 		$scope.onFirstBtnClickResult = "";
 		$scope.secondBtnInput = "";
+		$scope.onDblClickResult = "";
 
 		//
 		// var getCrossBrowserElementCoords = function(mouseEvent) {
@@ -29,5 +30,8 @@ angular.module("mainModule", [])
 		};
 		$scope.onSecondBtnClick = function(value) {
 			$scope.onSecondBtnClickResult = "You input: " + value + ".";
+		};
+		$scope.onDblClick = function() {
+			$scope.onDblClickResult = "DOUBLE-CLICKED";
 		};
 	});
