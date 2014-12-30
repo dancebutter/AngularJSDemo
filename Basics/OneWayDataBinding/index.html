@@ -1,0 +1,11 @@
+<!DOCTPYE html>
+<html>
+<head>
+	<title>One way data binding</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.js"></script>
+</head>
+<body ng-app ng-init="firstName = 'John'; lastName = 'Doe';">
+	<strong>First name:</strong>{{firstName}} <br />
+	<strong>Last name:</strong> <span ng-bind="lastName"></span>
+</body>
+</html>

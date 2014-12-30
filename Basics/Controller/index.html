@@ -1,0 +1,19 @@
+<!DOCTPYE html>
+<html>
+<head>
+	<title>Controller</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+</head>
+<body ng-app>
+	<div ng-controller="simpleController">
+		<strong>First Name: </strong> {{firstName}} <br />
+		<strong>Last Name: </strong> <span ng-bind="lastName"></span> <br/>
+		<strong>Full Name: </strong> {{getFullName()}} <br>
+		<br />
+		<label>Set First Name: <input type="text" ng-model="firstName"></label>
+		<br>
+		<label>Set Last Name: <input type="text" ng-model="lastName"></label>
+	</div>
+</body>
+</html>

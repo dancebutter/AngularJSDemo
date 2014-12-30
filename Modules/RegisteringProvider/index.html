@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registering a Provider</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+</head>
+<body ng-app="mainModule">
+  <div ng-controller="mainController">
+    <strong>First name:</strong> {{personManagerInstance.getPersonFirstName()}}<br />
+    <strong>Last name:</strong> {{personManagerInstance.getPersonLastName()}}<br />
+    <strong>Full name:</strong> {{personManagerInstance.getPersonFullName("*")}}<br />
+    <br />
+    <label>Set the first name: <input type="text" ng-model="personInstance.firstName"/></label><br />
+    <label>Set the last name: <input type="text" ng-model="personInstance.lastName"/></label><br>
+    <label>Set the separator: <input type="text" ng-model="personInstance.separator"/> </label>
+  </div>
+</body>
+</html>

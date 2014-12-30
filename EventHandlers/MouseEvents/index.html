@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Mouse Events</title>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.js"></script>
+		<script type="text/javascript" src="script.js"></script>
+	</head>
+	<body ng-app="mainModule">
+		<div ng-controller="mainController">
+			<h3>1. Click</h3>
+			<button id="firstBtn" ng-click="onFirstBtnClick()">Click me</button>
+			<strong>Result: </strong> {{onFirstBtnClickResult}} <br>
+			<br>
+			<h3>2. Click with Dependency Injection</h3>
+			<label>Type something: <input type="text" ng-model="secondBtnInput"></label>
+			<button id="secondBtn" ng-click="onSecondBtnClick(secondBtnInput)">Click me</button><br>
+			<h3>Result: </h3> {{onSecondBtnClickResult}}
+			<br>
+			<h3>3. Double click</h3>
+		</div>
+	</body>
+</html>

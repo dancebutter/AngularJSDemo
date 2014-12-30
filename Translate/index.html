@@ -1,0 +1,30 @@
+<html>
+	<head>
+    <script src="http://code.angularjs.org/1.1.5/angular.js"></script>
+    <script src="//cdn.rawgit.com/angular-translate/bower-angular-translate/2.4.0/angular-translate.min.js"></script>
+    <!--
+    <script src="http://rawgithub.com/angular/bower-angular-cookies/master/angular-cookies.min.js"></script>
+    <script src="http://rawgithub.com/angular-translate/bower-angular-translate/master/angular-translate.min.js"></script>
+    <script src="http://rawgithub.com/angular-translate/bower-angular-translate-interpolation-messageformat/master/angular-translate-interpolation-messageformat.min.js"></script>
+    <script src="http://rawgithub.com/angular-translate/bower-angular-translate-storage-cookie/master/angular-translate-storage-cookie.min.js"></script>
+    <script src="http://rawgithub.com/angular-translate/bower-angular-translate-storage-local/master/angular-translate-storage-local.min.js"></script>
+    <script src="http://rawgithub.com/angular-translate/bower-angular-translate-loader-static-files/master/angular-translate-loader-static-files.min.js"></script>
+    <script src="http://rawgithub.com/angular-translate/bower-angular-translate-handler-log/master/angular-translate-handler-log.min.js"></script>
+-->
+    <script src="script.js"></script>
+	</head>
+
+	<body ng-app="myApp">
+        <ul ng-controller="langController">
+            <li><button ng-click="switchLanguage('de')">German</button></li>
+            <li><button ng-click="switchLanguage('en')">English</button></li>
+        </ul>
+
+        <h1>{{ "APP_TITLE" | translate }}</h1>
+        <p>{{ "INTRODUCTION_TEXT" | translate }}</p>
+
+        <h1 translate="APP_TITLE"></h1>
+        <p translate="INTRODUCTION_TEXT"></p>
+        <br>
+	</body>
+</html>

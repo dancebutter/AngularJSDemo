@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Nested Controllers</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+</head>
+<body ng-app>
+	<h2>Nested controller</h2>
+	<div ng-controller="firstControllerScope">
+		<h3>First Controller</h3>
+		<strong>Frist name: </strong> {{firstName}} <br>
+		<br>
+		<label>Set the first name: <input type="text" ng-model="firstName"></label> <br>
+		<div ng-controller="secondControllerScope">
+			<h3>Second controller (inside first)</h3>
+			<strong>Frist name: </strong> {{firstName}} <br>
+			<strong>Last name: </strong> {{lastName}} <br>
+			<strong>Full name: </strong> {{getFullName()}} <br>
+			<br>
+			<label>Set First Name: <input type="text" ng-model="firstName" /></label>
+			<br>
+			<label>Set Last Name: <input type="text" ng-model="lastName" /></label>
+			<br>
+			<div ng-controller="thirdControllerScope">
+				<h3>Third controller</h3>
+				<strong>Frist name: </strong> {{firstName}} <br>
+				<strong>Last name: </strong> {{middleName}} <br>
+				<strong>Last name(from second): </strong> {{$parent.lastName}} <br>
+				<strong>Last name: </strong> {{lastName}} <br>
+				<strong>Full name: </strong> {{getFullName()}} <br>
+				<label>Set First Name: <input type="text" ng-model="firstName" /></label>
+				<br>
+				<label>Set Middle Name: <input type="text" ng-model="middleName" /></label>
+				<br>
+				<label>Set Last Name: <input type="text" ng-model="lastName" /></label>
+			</div>
+		</div>
+	</div>
+	<br>
+	<br>
+	<hr>
+	<div ng-controller="firstControllerObj">
+		<h3>First Controller</h3>
+		<strong>Frist name: </strong> {{firstModelObj.firstName}} <br>
+		<label>Set First Name: <input type="text" ng-model="firstModelObj.firstName" /></label>
+		<br>
+		<div ng-controller="secondControllerObj">
+			<h3>Second Controller</h3>	
+			<strong>First name (from First):</strong> {{firstModelObj.firstName}}<br />
+			<strong>Last name (from Second):</strong> {{secondModelObj.lastName}}<br />
+			<strong>Full name: </strong> {{getFullName()}} <br>
+			<label>Set First Name: <input type="text" ng-model="firstModelObj.firstName" /></label>
+			<br>
+			<label>Set Last Name: <input type="text" ng-model="secondModelObj.lastName" /></label>
+			<br>
+			<div ng-controller="thirdControllerObj">
+				<h3>Third controller</h3>
+				<strong>First name: </strong> {{firstModelObj.firstName}} <br>
+				<strong>Middle name: </strong> {{thirdModelObj.middleName}} <br>
+				<strong>Last Name: </strong> {{secondModelObj.lastName}} <br>
+				<strong>Last name: </strong> {{thirdModelObj.lastName}} <br>
+				<strong>Full name: </strong> {{getFullName()}} <br>
+		        <label>Set the first name: <input type="text" ng-model="firstModelObj.firstName"/></label><br />
+		        <label>Set the middle name: <input type="text" ng-model="thirdModelObj.middleName"/></label><br />
+		        <label>Set the last name: <input type="text" ng-model="thirdModelObj.lastName"/></label>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
