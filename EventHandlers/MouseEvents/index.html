@@ -20,6 +20,21 @@
 			Double-click the square <br>
 			<img src="square.png" ng-dblclick="onDblClick()" /> <br>
 			<strong>RESULT: </strong> {{onDblClickResult}} <br>
+			<h3>4. Mouse down, up, enter, leave, move, over</h3>
+			Move the mouse on the square <br>
+			<img src="square.png" 
+				ng-mousedown="onMouseDown($event)"
+				ng-mouseup="onMouseUp($event)"
+				ng-mouseenter="onMouseEnter($event)"
+				ng-mouseleave="onMouseLeave($event)"
+				ng-mousemove="onMouseMove($event)"
+				ng-mouseover="onMouseOver($event)" /> <br>
+			<strong>Mouse Down Result: </strong>{{onMouseDownResult}} <br>
+			<strong>Mouse Up Result: </strong>{{onMouseUpResult}}<br>
+			<strong>Mouse Enter Result: </strong>{{onMouseEnterResult}}<br>
+			<strong>Mouse Leave Result: </strong>{{onMouseLeaveResult}}<br>
+			<strong>Mouse Move Result: </strong>{{onMouseMoveResult}}<br>
+			<strong>Mouse Over Result: </strong>{{onMouseOverResult}}<br>
 		</div>
 	</body>
 </html>
