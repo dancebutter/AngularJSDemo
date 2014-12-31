@@ -10,14 +10,6 @@ angular.module("mainModule", [])
 		$scope.onMouseMoveResult = "";
 		$scope.onMouseOverResult = "";
 
-
-
-		// Get mouse event
-		var getMouseEventResult = function(mouseEvent, mouseEventDesc) {
-			var coords = getCrossBrowserElementCoords(mouseEvent);
-			return mouseEventDesc + " at ( " + coords.x + ", " + coords.y + " ) ";
-		};
-
 		// Utility function
 		// Accepts a MouseEvent as input and returns the x and y
 		// coordinates relative to the target elements.
@@ -49,7 +41,7 @@ angular.module("mainModule", [])
 						offX += offEl.offsetLeft;
 						offY += offEl.offsetTop;
 
-						offEl + offEl.offsetParent;
+						offEl = offEl.offsetParent;
 					}
 				} else {
 					offX = offEl.x;
@@ -62,15 +54,29 @@ angular.module("mainModule", [])
 			return result;
 		};
 
+		// Get mouse event
+		var getMouseEventResult = function(mouseEvent, mouseEventDesc) {
+			var coords = getCrossBrowserElementCoords(mouseEvent);
+			return mouseEventDesc + " at ( " + coords.x + ", " + coords.y + " ) ";
+		};
+
 		//Event handlers
 		$scope.onFirstBtnClick = function() {
-			$scope.onFirstBtnClickResult = "CLICKED";
+			if($scope.onFirstBtnClickResult == "") {
+				$scope.onFirstBtnClickResult = "CLICKED";
+			} else {
+				$scope.onFirstBtnClickResult = "";
+			}
 		};
 		$scope.onSecondBtnClick = function(value) {
 			$scope.onSecondBtnClickResult = "You input: " + value + ".";
 		};
 		$scope.onDblClick = function() {
-			$scope.onDblClickResult = "DOUBLE-CLICKED";
+			if($scope.onDblClickResult == "") {
+				$scope.onDblClickResult = "DOUBLE-CLICKED";
+			} else {
+				$scope.onDblClickResult = "";
+			}
 		};
 		$scope.onMouseDown = function($event) {
 			$scope.onMouseDownResult = getMouseEventResult($event, "Mouse down");
