@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Repeater</title>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.js"></script>
+		<script type="text/javascript" src="script.js"></script>
+		<style>
+			table {
+				border-collapse: collapse;
+			}
+
+			table, th, td {
+				border: 1px solid #e1e1e1;
+			}
+
+			th, td {
+				padding: 6px;
+			}
+
+			thead {
+				background-color: #fcfcfc;
+			}
+		</style>
+	</head>
+
+	<body ng-app="mainModule">
+		<div ng-controller="mainController">
+			<h3>1. Simple table</h3>
+			<table>
+				<thead>
+					<tr>
+						<th>First name</th>
+						<th>Last name</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="person in people">
+						<td><input type="text" ng-model="person.firstName" /></td>
+						<td><input type="text" ng-model="person.lastName" /></td>
+					</tr>
+			        <tr ng-repeat="person in people">
+			          <td>{{person.firstName}}</td>
+			          <td>{{person.lastName}}</td>
+			        </tr>
+				</tbody>
+			</table>
+			<br>
+			<h3>2. Table with rows selection</h3>
+			<table>
+				<thead>
+					<tr>
+						<th>
+							<input type="checkbox" ng-model="areAllPeopleSelected" ng-change="updatePeopleSelection(selectablePeople, areAllPeopleSelected)" />
+						</th>
+						<th>First name</th>
+						<th>Last name</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="person in selectablePeople">
+						<td><input type="checkbox" ng-model="person.isSelected" /></td>
+						<td>{{person.firstName}}</td>
+						<td>{{person.lastName}}</td>
+						<td>{{person.isSelected}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</body>
+</html>
