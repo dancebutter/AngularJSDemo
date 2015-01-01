@@ -2,6 +2,8 @@ angular.module("mainModule", [])
 	.controller("mainController", function($scope) {
 		// Intialization
 		$scope.areAllPeopleSelected = false;
+		$scope.stringsArray = [];
+		var currStringIndex = 0;
 
 		$scope.people = [
 			{firstName: "John", lastName: "Doe"},
@@ -21,6 +23,37 @@ angular.module("mainModule", [])
 		$scope.updatePeopleSelection = function (peopleArray, selectionValue) {
 			for(var i = 0; i < peopleArray.length; i++) {
 				peopleArray[i].isSelected = selectionValue;
+			}
+		};
+
+		$scope.getPersonPositionDesc = function(isFirst, isMiddle, isLast, isEven, isOdd) {
+			var result = "";
+
+			if(isFirst) {
+				result = "(first";
+			} else if(isMiddle) {
+				result = "(middle";
+			} else if(isLast) {
+				result = "(last";
+			}
+
+			if(isEven) {
+				result += "-even)";
+			} else if(isOdd) {
+				result += "-odd)";
+			}
+
+			return result;
+		};
+
+		$scope.addStringToArray = function() {
+			$scope.stringsArray.push("Item" + currStringIndex);
+			currStringIndex++;
+		};
+
+		$scope.removeStringFromArray = function(stringIndex) {
+			if(stringIndex >= 0 && stringIndex < $scope.stringsArray.length) {
+				$scope.stringsArray.splice(stringIndex, 1);
 			}
 		};
 	});
