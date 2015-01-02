@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Formating Filters</title>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.js"></script>
+		<script src="script.js"></script>
+	</head>
+
+	<body ng-app="mainModule">
+		<div ng-controller="mainController">
+
+			<h3>1. Simple filter</h3>
+			<strong>Original data:</strong> {{stringData}} <br>
+			<strong>Filtered data(UpperCase): </strong> {{stringData | uppercase}} <br>
+
+			<h3>2. Chained filters</h3>
+			<strong>Original data:</strong> {{stringData}} <br>
+			<strong>Limit to: <input type="text" ng-model="digital"></strong> result: {{digital}}<br>
+			<button ng-click="addDigital()">add</button><button ng-click="minusDigital()">minus</button><br>
+			<strong>Filtered data:</strong> {{stringData | lowercase | limitTo:digital}} <br>
+			<br>
+
+			<h3>3. Filter in JavaScript</h3>
+			<strong>Original data:</strong> {{dateData}} <br>
+			<strong>Filtered data (HTML):</strong> {{dateData | date:"dd MMM yyyy"}} <br>
+			<strong>Filtered data (JavaScript - alternative 1):</strong> {{formatDate1(dateData, "dd MMM yyyy")}} <br>
+			<strong>Filtered data (JavaScript - alternative 2):</strong> {{formatDate2(dateData, "dd MMM yyyy")}} <br>
+		</div>
+	</body>
+</html>
