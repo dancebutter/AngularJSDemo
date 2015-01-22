@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>q service</title>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.js"></script>
+		<script src="script.js"></script>
+	</head>
+	<body ng-app="mainModule">
+		<div ng-controller="mainController">
+			<h3>1. Basic example</h3>
+			<button ng-click="basicAsyncFunc(true)">Call asynchronous function with SUCCESS</button><br>
+			<button ng-click="basicAsyncFunc(false)">Call asynchronous function with ERROR</button><br>
+			<br>
+			<strong>Function result: </strong> {{basicAsyncFuncResult}} <br>
+			<br>
+		</div>
+	</body>
+</html>
