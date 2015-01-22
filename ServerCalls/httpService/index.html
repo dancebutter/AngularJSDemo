@@ -28,7 +28,55 @@
 			<label>Parameter 2: <input type="text" ng-model="getParam2" ng-init="getParam2 = 'param2 value'" /></label><br>
 			<button ng-click="getCall()">GET call</button><br>
 			<textarea class="logTextArea">{{getCallResult}}</textarea>
+			<br>
 
+			<h3>3. GET call with JSON response</h3>
+			<label>Parameter 1: <input type="text" ng-model="getJSONParam1" ng-init="getJSONParam1 = 'param1 value'" /></label><br>
+			<label>Parameter 2: <input type="text" ng-model="getJSONParam2" ng-init="getJSONParam2 = 'param2 value'" /></label><br>
+			<button ng-click="getCallJSON()">GET call</button><br>
+			<textarea class="logTextArea">{{getCallJSONResult}}</textarea><br>
+			
+			<h3>3.5 GET call from JSON file</h3>
+			<button ng-click="getCallJSONFile()">GET call</button><br>
+			<table>
+				<thead>
+					<tr>
+						<th>First Name</th>
+						<th>Last Name</th>
+					</tr>
+				</thead>
+				<tbody ng-repeat="person in getCallJSONFileResultOnly.people">
+					<tr>
+						<td>{{person.firstName}}</td>
+						<td>{{person.lastName}}</td>
+					</tr>
+				</tbody>
+			</table><br>
+			<textarea class="logTextArea">{{getCallJSONFileResultOnly}}</textarea>
+			<textarea class="logTextArea">{{getCallJSONFileResult}}</textarea>
+			<br>
+
+			<h3>4. GET call with timeout</h3>
+			<button ng-click="getCallTimeout()">GET call</button><br>
+			<!--
+			<table>
+				<thead>
+					<tr>
+						<th>First Name</th>
+						<th>Last Name</th>
+					</tr>
+				</thead>
+				<tbody ng-repeat="person in getCallTimeoutResult.people">
+					<tr>
+						<td>{{person.firstName}}</td>
+						<td>{{person.lastName}}</td>
+					</tr>
+				</tbody>
+			</table><br>
+			-->
+		    <textarea class="logTextArea">{{getCallTimeoutResult}}</textarea>
+    		<br />
+    		
 		</div>
 	</body>
 </html>
